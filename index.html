@@ -5,17 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/style.css" />
+
     <title>JavaScript Quiz</title>
   </head>
   <body>
     <header>
       <h1>JavaScript Quiz</h1>
     </header>
-    <div id="subheader">
-        <a href="#">View High Scores</a>
-        <p>Time:</p>
+    <div id="scores">
+      <a href="#">View High Scores</a>
+    </div>
+    <div id="timer">
+      <p>Time:</p>
     </div>
     <main>
+      <h3 id="quiz-instructions">
+        Try to answer the following JavaScript-related questions within the time
+        limit. <br> Keep in mind that incorrect answers will penalize you score/time
+        by 5 seconds!
+      </h3>
       <button id="start-btn">Start Quiz</button>
 
       <section id="quiz-container" class="hide">
@@ -25,7 +33,7 @@
 
       <section id="end-screen" class="hide">
         <h2>All Done!</h2>
-        <p>Your final score is <span id="final-score"></span></p>
+        <p>Your final score is: <span id="final-score"></span></p>
         <form>
           <label for="initials">Enter your initials:</label>
           <input type="text" id="initials" name="initials" maxlength="3" />
@@ -36,5 +44,6 @@
     <footer>
       <p>&copy; 2023 Dallas Moore</p>
     </footer>
+    <script src="./assets/script.js"></script>
   </body>
 </html>

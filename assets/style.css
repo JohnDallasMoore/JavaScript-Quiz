@@ -28,20 +28,25 @@ main {
     min-height: 66vh;
 }
 
-#subheader a {
+#scores {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    padding: 15px;
+    
+}
+
+#timer {
     display: flex;
     flex-direction: row;
     justify-content: start;
     padding: 15px;
 }
 
-#subheader p {
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    padding: 15px;
+#quiz-instructions {
+    text-align: center;
+    padding-bottom: 200px;
 }
-
 
 #start-btn {
     width: 150px;

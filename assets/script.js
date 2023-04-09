@@ -1,4 +1,4 @@
-const quizQuestions = [
+/* const quizQuestions = [
     {
         question: "Which of the following is a primitive data type in JavaScript?"
         choices: ["Object", "Array", "String", "Function"]
@@ -50,3 +50,51 @@ const quizQuestions = [
         answer: "==="
     }
 ]
+*/
+
+
+
+
+//-------------------------------------
+
+//Hides End Screen on Start
+var hideEndScreen = document.getElementById("end-screen");
+hideEndScreen.style.display = "none"
+
+
+
+
+
+//Countdown timer
+var timerEl = document.getElementById("timer");
+var timeLeft = 5;
+
+function updateTimer() {
+    var timerInterval = setInterval(function() {
+        timeLeft--;
+        timerEl.textContent = "Time: " + timeLeft
+        
+        if(timeLeft === 0) {
+            clearInterval(timerInterval);
+            endScreen();
+        }
+        
+    }, 1000);
+}
+//Starts timer
+var startButton = document.querySelector("#start-btn")
+var quizInstructions = document.querySelector("#quiz-instructions")
+var finalScore = document.getElementById("final-score")
+
+startButton.addEventListener("click", function(){
+    updateTimer();
+    //Hide start button and quiz instructions 
+    startButton.style.display = "none"
+    quizInstructions.style.display = "none"
+})
+
+function endScreen(){
+    //Code to switch to end screen when timer is finished
+    hideEndScreen.style.display = ""
+    finalScore.textContent = timeLeft
+}
