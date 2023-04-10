@@ -1,56 +1,66 @@
-/* const quizQuestions = [
+const quizQuestions = [
     {
-        question: "Which of the following is a primitive data type in JavaScript?"
-        choices: ["Object", "Array", "String", "Function"]
+        index: 0,
+        question: "Which of the following is a primitive data type in JavaScript?",
+        choices: ["Object", "Array", "String", "Function"],
         answer: "String"
     },
     {
-        question: "Which keyword is used to declare a variable in JavaScript?"
-        choices: ["let", "const", "var", "all of the above"]
+        index: 1,
+        question: "Which keyword is used to declare a variable in JavaScript?",
+        choices: ["let", "const", "var", "all of the above"],
         answer: "all of the above"
     },
     {
-        question: "Which method is used to add a new element to the end of an array in JavaScript?"
-        choices: ["shift()", "unshift()", "push()", "pop()"]
+        index: 2,
+        question: "Which method is used to add a new element to the end of an array in JavaScript?",
+        choices: ["shift()", "unshift()", "push()", "pop()"],
         answer: "push()"
     },
     {
-        question: "Which statement is used to terminate a switch statement in JavaScript?"
-        choices: ["break", "continue", "return", "exit"]
+        index: 3,
+        question: "Which statement is used to terminate a switch statement in JavaScript?",
+        choices: ["break", "continue", "return", "exit"],
         answer: "break"
     },
     {
-        question: "Which function is used to convert a a string to a number in JavaScript?"
-        choices: ["parseInt()", "parseFloat()", "toNumber()","toString()"]
+        index: 4,
+        question: "Which function is used to convert a a string to a number in JavaScript?",
+        choices: ["parseInt()", "parseFloat()", "toNumber()","toString()"],
         answer: "parseInt()"
     },
     {
-        question: "Which operator is used to concatenate two strings in JavaScript?"
-        choices: ["+", "-", "*", "/"]
+        index: 5,
+        question: "Which operator is used to concatenate two strings in JavaScript?",
+        choices: ["+", "-", "*", "/"],
         answer: "+"
     },
     {
-        question: "Which method is used to remove the last element from an array in JavaScript?"
-        choices: ["shift()", "unshift()", "push()", "pop()"]
+        index: 6,
+        question: "Which method is used to remove the last element from an array in JavaScript?",
+        choices: ["shift()", "unshift()", "push()", "pop()"],
         answer: "pop()"
     },
     {
-        question: "Which function is used to generate a random number between 0 and 1 in JavaScript?"
-        choices: ["random()", "randomNumber()", "Math.random()", "Math.randomNumber()"]
+        index: 7,
+        question: "Which function is used to generate a random number between 0 and 1 in JavaScript?",
+        choices: ["random()", "randomNumber()", "Math.random()", "Math.randomNumber()"],
         answer: "Math.random()"
     },
     {
-        question: "Which keyword is used to declare a function in JavaScript?"
-        choices: ["func", "function", "def", "define"]
+        index: 8,
+        question: "Which keyword is used to declare a function in JavaScript?",
+        choices: ["func", "function", "def", "define"],
         answer: "function"
     },
     {
-        question: "Which operator is used to strictly compare two values in JavaScript?"
-        choices: ["=", "==", "===", "!="]
+        index: 9,
+        question: "Which operator is used to strictly compare two values in JavaScript?",
+        choices: ["=", "==", "===", "!="],
         answer: "==="
     }
 ]
-*/
+
 
 
 
@@ -67,7 +77,8 @@ hideEndScreen.style.display = "none"
 
 //Countdown timer
 var timerEl = document.getElementById("timer");
-var timeLeft = 5;
+//Change timeLeft back to 100 when complete
+var timeLeft = 100;
 
 function updateTimer() {
     var timerInterval = setInterval(function() {
@@ -91,8 +102,41 @@ startButton.addEventListener("click", function(){
     //Hide start button and quiz instructions 
     startButton.style.display = "none"
     quizInstructions.style.display = "none"
+    //Populates quiz questions once function is complete
+    populateQuiz()
 })
 
+
+
+//Populate the quiz questions
+var quizContainer = document.getElementById("quiz-container")
+
+function populateQuiz(){
+    for (var i = 0; i < quizQuestions.length; i++){
+        //get question container
+        var questionsContainer = document.getElementById("questions-container")
+        questionsContainer.textContent = quizQuestions[i].question
+        
+        //get choices container
+        var choicesContainer = document.getElementById("choices-container")
+
+        if (i > 0){
+        for (var k = 0; k < 4; k++){
+            choicesContainer.removeChild("button")   
+        }
+    } 
+        for (var j = 0; j < quizQuestions[i].choices.length; j++){
+            var choices = document.createElement("button");
+            choices.innerHTML = quizQuestions[i].choices[j]
+            choicesContainer.appendChild(choices)
+            }
+        //Create function to go to next question
+    }
+}
+
+
+
+//End Screen Code
 function endScreen(){
     //Code to switch to end screen when timer is finished
     hideEndScreen.style.display = ""
