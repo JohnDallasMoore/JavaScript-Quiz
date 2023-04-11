@@ -87,11 +87,13 @@ main {
     height: 50px;
     margin: 5px;
     font-size: large;
+    justify-content: center;
 }
 
 .choices-container {
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
+    justify-content: center;
     align-items: center;
 }
 
@@ -109,3 +111,28 @@ main {
 .choice-button.incorrect {
     background-color: red;
 }
+
+/*media query */
+@media screen and (max-width: 767px) {
+    #questions-container {
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+
+    #choices-container button {
+        width: 90%;
+        height: 40px;
+        margin: 5px 0;
+        font-size: 16px;
+    }
+
+    .choice-button {
+        margin: 5px;
+        padding: 5px;
+        font-size: 16px;
+    }
+    ul {
+        padding-inline-start: 0;
+    }
+}
+
