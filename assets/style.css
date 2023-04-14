@@ -1,138 +1,159 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-header, footer {
-    background-color: rgb(14, 0, 117);
-    color: white;
-    text-align: center;
+header,
+footer {
+  background-color: rgb(14, 0, 117);
+  color: white;
+  text-align: center;
 }
 header {
-    padding: 20px;
- }
-
-footer {
-    padding: 1px;
-    text-align: center;
+  padding: 20px;
 }
 
+h2 {
+  text-align: center;
+}
+footer {
+  padding: 1px;
+  text-align: center;
+}
 
 main {
-    display: flex;
-    flex-flow: column wrap;
-    align-items: center;
-    justify-content: center;
-    padding: 20px 0;
-    min-height: 66vh;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+  min-height: 66vh;
 }
 
 #scores {
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    padding: 15px;
-    
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  padding: 15px;
 }
 
 #timer {
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    padding: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  padding: 15px;
 }
 
 #quiz-instructions {
-    text-align: center;
-    padding-bottom: 200px;
+  text-align: center;
+  padding-bottom: 200px;
 }
 
 #start-btn {
-    width: 150px;
-    height: 50px;
-    font-size: larger;
-    border-color:  rgb(14, 0, 117);
-    border-radius: 10px;
+  width: 150px;
+  height: 50px;
+  font-size: larger;
+  border-color: rgb(14, 0, 117);
+  border-radius: 10px;
 }
 #start-btn:hover {
-    background-color: rgb(14, 0, 117);
-    color: white;
-
+  background-color: rgb(14, 0, 117);
+  color: white;
 }
 
 #end-screen {
-    text-align: center;
-
+  text-align: center;
 }
 
 #submit-btn {
-    font-size: medium;
-    border-color:  rgb(14, 0, 117);
-    border-radius: 4px;
+  font-size: medium;
+  border-color: rgb(14, 0, 117);
+  border-radius: 4px;
 }
 
 #submit-btn:hover {
-    background-color: rgb(14, 0, 117);
-    color: white;
+  background-color: rgb(14, 0, 117);
+  color: white;
 }
 
 #questions-container {
-    text-align: center;
-    font-size: 50px;
-    margin-bottom: 75px;
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 75px;
 }
 #choices-container button {
-    width: 200px;
-    height: 50px;
-    margin: 5px;
-    font-size: large;
-    justify-content: center;
+  width: 200px;
+  height: 50px;
+  margin: 5px;
+  font-size: large;
+  justify-content: center;
 }
 
 .choices-container {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .choice-button {
-    margin: 10px;
-    padding: 10px;
-    width: 100%;
-    font-size: 18px;
+  margin: 10px;
+  padding: 10px;
+  width: 100%;
+  font-size: 18px;
 }
 
 .choice-button.correct {
-    background-color: green;
+  background-color: green;
 }
 
 .choice-button.incorrect {
-    background-color: red;
+  background-color: red;
 }
 
 /*media query */
 @media screen and (max-width: 767px) {
-    #questions-container {
-        font-size: 30px;
-        margin-bottom: 30px;
-    }
+  #questions-container {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
 
-    #choices-container button {
-        width: 90%;
-        height: 40px;
-        margin: 5px 0;
-        font-size: 16px;
-    }
+  #choices-container button {
+    width: 90%;
+    height: 40px;
+    margin: 5px 0;
+    font-size: 16px;
+  }
 
-    .choice-button {
-        margin: 5px;
-        padding: 5px;
-        font-size: 16px;
-    }
-    ul {
-        padding-inline-start: 0;
-    }
+  .choice-button {
+    margin: 5px;
+    padding: 5px;
+    font-size: 16px;
+  }
+  ul {
+    padding-inline-start: 0;
+  }
 }
 
+#high-scores-container {
+  text-align: center;
+  border: solid black;
+  margin: 20px;
+}
+
+#high-scores-container > ul {
+  list-style-type: none;
+}
+
+#back {
+  font-size: medium;
+  border-color: rgb(14, 0, 117);
+  border-radius: 4px;
+  margin: 5px;
+}
+
+#back:hover {
+  background-color: rgb(14, 0, 117);
+  color: white;
+}

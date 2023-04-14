@@ -76,12 +76,12 @@ var timeLeft = 100;
 
 function updateTimer() {
   var timerInterval = setInterval(function () {
-    timeLeft--;
     if (timeLeft <= 0) {
       clearInterval(timerInterval);
       endScreen();
       return;
     }
+    timeLeft--;
     timerEl.textContent = "Time: " + timeLeft;
   }, 1000);
 }
@@ -133,7 +133,7 @@ function populateQuiz() {
       buttons.forEach(function (button) {
         button.disabled = true;
       });
-      //Turns
+      //Turns choice button green if correct/Red if wrong while also turning correct item green
       if (this.dataset.isCorrect) {
         this.classList.add("correct");
       } else {
@@ -170,3 +170,24 @@ function endScreen() {
   quizContainer.style.display = "none";
   timerEl.style.display = "none";
 }
+
+//Store users score and initial to return on highscores page
+
+var submitButton = document.getElementById("submit-btn");
+submitButton.addEventListener("click", function (e) {
+  e.preventDefault();
+  var initialsInput = document.getElementById("initials-input");
+  var initials = initialsInput.value.trim();
+  if (initials !== "") {
+    var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+    var newScore = {
+      initials: initials,
+      score: timeLeft,
+    };
+    highScores.push(newScore);
+    localStorage.setItem("highScores", JSON.stringify(highScores));
+    window.location.replace("high-score.html");
+    window.location.assign = "/high-score.html";
+  }
+});
+
