@@ -1,4 +1,4 @@
-# JavaScript Quis=z
+# JavaScript Quiz
 
 ## Description
 This is a JavaScript quiz application that presents the user with a series of multiple-choice questions and tracks their score. It uses an array of objects to store the quiz questions, and dynamically generates the HTML elements necessary to display the quiz and receive user input. The quiz is timed, and points are deducted for incorrect answers. The user's score is displayed at the end of the quiz, and they can enter their initials to save their score to the high scores page.
