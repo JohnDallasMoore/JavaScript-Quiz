@@ -1,11 +1,11 @@
-# Challenge-4
+# JavaScript Quis=z
 
 ## Description
 This is a JavaScript quiz application that presents the user with a series of multiple-choice questions and tracks their score. It uses an array of objects to store the quiz questions, and dynamically generates the HTML elements necessary to display the quiz and receive user input. The quiz is timed, and points are deducted for incorrect answers. The user's score is displayed at the end of the quiz, and they can enter their initials to save their score to the high scores page.
 
-![challenge-4](https://user-images.githubusercontent.com/121253666/231937380-7f17ae10-8af6-4eef-8ea6-bd9aeb647d5b.gif)
+![JavaScript-Quiz](https://user-images.githubusercontent.com/121253666/231937380-7f17ae10-8af6-4eef-8ea6-bd9aeb647d5b.gif)
 
-[Link to Deployment](https://johndallasmoore.github.io/challenge-4/)
+[Link to Deployment](https://johndallasmoore.github.io/JavaScript-Quiz/)
 
 ## Installation
 N/a
